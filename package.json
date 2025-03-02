@@ -1,0 +1,9 @@
+{
+  "name": "com.matsufriends.morntransition",
+  "displayName": "Morn Transition",
+  "version": "1.0.0",
+  "unity": "6000.0",
+  "description": "Transition Extension for Unity.",
+  "license": "Unlicense",
+  "dependencies": {}
+}
