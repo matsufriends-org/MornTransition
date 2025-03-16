@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace MornTransition
 {
-    public sealed class MornTransition : MonoBehaviour
+    internal sealed class MornTransition : MonoBehaviour
     {
         [SerializeField] private MornTransitionType _type;
         [SerializeField] private Animator _animator;

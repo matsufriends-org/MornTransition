@@ -5,7 +5,7 @@ using UnityEditor;
 namespace MornTransition
 {
     [CustomPropertyDrawer(typeof(MornTransitionType))]
-    public class MornTransitionTypeDrawer : MornEnumDrawerBase
+    internal class MornTransitionTypeDrawer : MornEnumDrawerBase
     {
         protected override string[] Values => MornTransitionGlobal.I.TransitionNames;
     }
