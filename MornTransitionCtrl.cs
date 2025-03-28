@@ -8,8 +8,8 @@ namespace MornTransition
     public sealed class MornTransitionCtrl : MonoBehaviour
     {
         [SerializeField] [ReadOnly] private bool _initialized;
-        [SerializeField] [ReadOnly] private List<MornTransition> _allTransitions;
-        [SerializeField] [ReadOnly] private List<MornTransition> _activeTransitions;
+        [SerializeField] [ReadOnly] private List<MornTransitionBase> _allTransitions;
+        [SerializeField] [ReadOnly] private List<MornTransitionBase> _activeTransitions;
 
         private void Initialize()
         {
@@ -19,13 +19,13 @@ namespace MornTransition
             }
 
             _initialized = true;
-            _allTransitions = new List<MornTransition>(GetComponentsInChildren<MornTransition>());
-            _activeTransitions = new List<MornTransition>();
+            _allTransitions = new List<MornTransitionBase>(GetComponentsInChildren<MornTransitionBase>());
+            _activeTransitions = new List<MornTransitionBase>();
         }
 
-        private bool TryGetTransition(MornTransitionType transitionType, out MornTransition transition)
+        private bool TryGetTransition(MornTransitionType transitionType, out MornTransitionBase transition)
         {
-            transition = _allTransitions.Find(t => t.Type == transitionType);
+            transition = _allTransitions.Find(t => t.Type.Key == transitionType.Key);
             return transition != null;
         }
 
