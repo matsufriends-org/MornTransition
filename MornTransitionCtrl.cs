@@ -29,6 +29,11 @@ namespace MornTransition
             return transition != null;
         }
 
+        public bool IsFilling()
+        {
+            return _activeTransitions.Count > 0;
+        }
+
         public async UniTask FillAsync(MornTransitionType transitionType, CancellationToken ct = default)
         {
             Initialize();
