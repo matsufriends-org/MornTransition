@@ -25,7 +25,7 @@ namespace MornTransition
 
         private bool TryGetTransition(MornTransitionType transitionType, out MornTransition transition)
         {
-            transition = _allTransitions.Find(t => t.Type == transitionType);
+            transition = _allTransitions.Find(t => t.Type.Index == transitionType.Index);
             return transition != null;
         }
 
