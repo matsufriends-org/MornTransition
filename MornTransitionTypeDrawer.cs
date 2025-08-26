@@ -1,6 +1,7 @@
 #if UNITY_EDITOR
 using MornEnum;
 using UnityEditor;
+using UnityEngine;
 
 namespace MornTransition
 {
@@ -8,6 +9,7 @@ namespace MornTransition
     internal class MornTransitionTypeDrawer : MornEnumDrawerBase
     {
         protected override string[] Values => MornTransitionGlobal.I.TransitionNames;
+        protected override Object PingTarget => MornTransitionGlobal.I;
     }
 }
 #endif
